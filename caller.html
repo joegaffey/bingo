@@ -7,17 +7,21 @@
   
 #number {
   padding-top: 2vh;
-  padding-bottom: 2vh;
+  padding-bottom: 4vh;
   font-size: 12vh;
 }
   
-#call {
+#calls {
   font-size: 4vh;
+}
+
+.call {
+  margin-bottom: 4vh;
 }
 
 </style>
 <div id="number"></div>
-<div id="call"></div>
+<div id="calls"></div>
 
 <script>
   
@@ -143,10 +147,10 @@ function update() {
 
   callsArr.forEach(call => {
     if(call[0] == number)
-      callHTML += `<div>${call[1]}<\div>`;
+      callHTML += `<div class="call">${call[1]}</div>`;
   })
 
-  document.getElementById('call').innerHTML = callHTML;
+  document.getElementById('calls').innerHTML = callHTML;
 }
   
 update();
