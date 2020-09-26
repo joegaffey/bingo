@@ -1,20 +1,12 @@
 'use strict';
 
-let maxNum = 90;
-
-// Nope - Can contain duplicates
-// let nums = Array.from({length: 24}, () => Math.floor(Math.random() * maxNum)); 
-
-// Nope - Can contain 0
-// let nums = [...Array(maxNum).keys()].sort(() => { 
-//     return Math.random() - 0.5; 
-// });
+let maxNum = 70;
 
 const range = (start, end, step) => {
   return Array.from(Array.from(Array(Math.ceil((end-start)/step)).keys()), x => start+ x*step);
 }
 
-let nums = range(1, maxNum, 1).sort(() => { // Can contain 0
+let nums = range(1, maxNum, 1).sort(() => {
     return Math.random() - 0.5; 
 });
 
