@@ -1,0 +1,158 @@
+<style>
+
+* {
+  text-align: center;
+  font-family: verdana;
+}
+  
+#number {
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  font-size: 12vh;
+}
+  
+#call {
+  font-size: 4vh;
+}
+
+</style>
+<div id="number"></div>
+<div id="call"></div>
+
+<script>
+  
+  const maxNum = 40;
+  
+  const callsString = `1  Kelly's Eye
+2  One little duck.
+2  Me and you
+3  Cup of tea
+3  You and me
+4  Knock at the door
+5  	Man alive
+6  Tom Mix
+6  Half a dozen
+7  Lucky
+8  Garden gate
+9  Brighton line 
+9  Doctor's Orders
+10  (Boris's) Den
+11  Legs eleven
+12  One dozen
+13  Unlucky for some
+14  The Lawnmower
+15  Young and Keen
+16  Never been kissed
+17  Dancing Queen
+18  Coming of Age
+19  Goodbye Teens
+20  One Score
+20  Getting Plenty
+21  Key of the Door
+22  Two little ducks
+23  The Lord is My Shepherd
+23  Thee and Me
+24  Two dozen
+25  Duck and dive
+26  Two and six, half a crown
+26  A to Z
+27  Duck and a crutch.
+28  In a state.
+28  Overweight
+29  Rise and Shine
+30  Burlington Bertie
+30  Dirty Gertie
+31  Get Up and Run
+32  Buckle My Shoe
+33  All the threes
+33  Fish, chips and peas
+34  Ask for More
+35  Jump and Jive
+36  Triple dozen
+37  Little heaven
+38  Christmas cake
+39  Steps
+40  Life Begins
+43  down on your knees
+44  Droopy drawers
+45  Halfway there
+46  up to tricks
+48  Four Dozen
+49  PC
+50  It's a bullseye!
+50  5 – 0, 5 – 0, it’s off to work we go
+51  Someones son
+52  Danny La Rue
+52  Chicken vindaloo
+52  Deck of Cards
+53  Here comes Herbie
+54  Man at the door
+55  All the fives
+56  Shotts Bus
+56  Was She Worth It?
+57  Heinz Varieties
+58  Goin straight
+59  The Brighton Line	
+60  Grandma's getting frisky
+61  Jump the gun
+62  Tickety-boo
+63  Katie's bad knee
+64  Almost retired
+65  Retirement age, Stop work
+66  Clickety click
+67  Stairway to Heaven
+68  Pick a Mate
+69  Anyway up, Meal for Two, A Favourite of mine
+71  Bang on the Drum
+72  Danny La Rue
+73  Queen Bee. Under The Tree. Lucky 3[9]
+74  Hit the Floor
+76  Trombones
+77  Two little crutches
+77  Sunset Strip
+78  39 more steps
+79  Fellin fine
+80  Gandhi's Breakfast
+81  Fat Lady with a walking stick
+82  Where's my shoe
+83  Time for Tea
+84  Seven dozen
+85  Staying alive
+86  Between the sticks
+87  Torquay in Devon
+88  Two Fat Ladies
+89  Nearly there
+89  Almost there
+90  Top of the shop`;
+  
+let calls = callsString.split('\n')
+let callsArr = [];
+calls.forEach(x => {
+  callsArr.push(x.split('  '));
+});
+  
+  
+function update() {
+  let number = Math.ceil(Math.random() * maxNum)
+
+  document.getElementById('number').innerHTML = number;
+
+  let callOptions = [];
+
+  let callHTML = ''
+
+  callsArr.forEach(call => {
+    if(call[0] == number)
+      callHTML += `<div>${call[1]}<\div>`;
+  })
+
+  document.getElementById('call').innerHTML = callHTML;
+}
+  
+update();
+
+document.body.onclick = () => { update() };
+  
+</script>
+  
+
