@@ -14,6 +14,12 @@
 #calls {
   font-size: 4vh;
 }
+  
+#numbers {
+  padding-top: 2vh;
+  font-size: 3vh;
+  word-wrap: break-word;
+}
 
 .call {
   margin-bottom: 4vh;
@@ -22,6 +28,7 @@
 </style>
 <div id="number"></div>
 <div id="calls"></div>
+<div id="numbers"></div>
 
 <script>
   
@@ -141,9 +148,20 @@ calls.forEach(x => {
   callsArr.push(x.split('  '));
 });
   
+let numbers = [];
+  
   
 function update() {
-  let number = Math.ceil(Math.random() * maxNum)
+    
+  let number = Math.ceil(Math.random() * maxNum);
+  if(numbers.length < 90) {  
+    while(numbers.includes(number))
+      number = Math.ceil(Math.random() * maxNum);
+    
+    numbers.push(number);
+  }
+  else
+    number = 'Done!';
 
   document.getElementById('number').innerHTML = number;
 
@@ -157,6 +175,7 @@ function update() {
   })
 
   document.getElementById('calls').innerHTML = callHTML;
+  document.getElementById('numbers').innerHTML = numbers;
 }
   
 update();
