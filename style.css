@@ -40,9 +40,9 @@ body {
   cursor: pointer;
 }
 
-#card tbody tr:nth-child(3) td:nth-child(3) {
+/* #card tbody tr:nth-child(3) td:nth-child(3) {
   background-color: #0001;
-}
+} */
 
 .stamped::after {
   content: '';
@@ -65,16 +65,8 @@ footer {
   justify-content: flex-end;
 }
 
-.glitchButton {
-  margin-left: 10px;
-}
-
 @media (max-width: 1000px) and (max-height: 1000px) {
   footer {
     font-size: 1.8vmin;
-  }
-  .glitchButton img {
-    height: 3vmin;
-    width: auto;
   }
 }
