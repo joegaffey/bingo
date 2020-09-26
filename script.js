@@ -1,6 +1,6 @@
 'use strict';
 
-let maxNum = 40;
+let maxNum = 90;
 
 // Nope - Can contain duplicates
 // let nums = Array.from({length: 24}, () => Math.floor(Math.random() * maxNum)); 
