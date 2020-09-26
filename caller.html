@@ -16,7 +16,7 @@
 }
   
 #numbers {
-  padding-top: 2vh;
+  padding: 4vh;
   font-size: 3vh;
   word-wrap: break-word;
 }
@@ -32,7 +32,7 @@
 
 <script>
   
-  const maxNum = 90;
+  const maxNum = 70;
   
   const callsString = `1  Kelly's Eye
 2  One little duck.
@@ -154,7 +154,7 @@ let numbers = [];
 function update() {
     
   let number = Math.ceil(Math.random() * maxNum);
-  if(numbers.length < 90) {  
+  if(numbers.length < maxNum) {  
     while(numbers.includes(number))
       number = Math.ceil(Math.random() * maxNum);
     
